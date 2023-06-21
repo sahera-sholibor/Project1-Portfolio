@@ -1,0 +1,31 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    font-size: 10px;
+    
+    /* Colors */
+    --color-primary:hsl(232,15%,19%);
+    --color-primary-m-light:hsl(231,15%,19%,.55);
+    --color-primary-m-dark:hsl(213,15%,19%,.85);
+
+    --color-secondary:rgb(255,170,6);
+    --color-secondary-m-light:rgba(255,170,6,.55);
+    --color-secondary-m-dark:rgba(255,170,6,.85);
+
+    --color-tertiary:#1a508b;
+    --color-tertiary-m-light:hsla(211,68%,32%,.55);
+    --color-tertiary-m-dark:hsla(211,68%,32%,.85);
+
+    --color-quaternary:rgb(231,231,230);
+    --color-quaternary-m-light:rgba(231,231,230,.55);
+    --color-quaternary-m-dark:rgba(231,231,230,.85);
+
+    /* Padding */
+
+}
+    
