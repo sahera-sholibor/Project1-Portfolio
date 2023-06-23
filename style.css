@@ -8,7 +8,7 @@
 :root{
     font-size: 10px;
     
-    /* Colors */
+    /* _________________Colors_________________ */
     --color-primary:hsl(232,15%,19%);
     --color-primary-m-light:hsl(231,15%,19%,.55);
     --color-primary-m-dark:hsl(213,15%,19%,.85);
@@ -25,7 +25,72 @@
     --color-quaternary-m-light:rgba(231,231,230,.55);
     --color-quaternary-m-dark:rgba(231,231,230,.85);
 
-    /* Padding */
-
+    /* ____________________Padding___________________ */
+    --padding-xl:calc(2rem + 6vh) calc(2rem + 6vw);
+    --padding-l:calc(3rem + 4vh) calc(3rem + 4vw);
+    --padding-m:calc(2rem + 2vh) calc(2rem + 2vw);
+    --padding-s:calc(1rem + 1vh) calc(1rem + 1vw);
+    /* ____________________Font size___________________ */
+    --font-size-l:calc(1.5rem + 2vw);
+    --font-size-m:calc(1rem + 1.5vw);
+    --font-size-s:calc(1rem + 1vw);
+    --font-size-xs:calc(0.5rem + 0.8vw);
+    /* ____________________Font family___________________ */
+    --font-family-main: "Fredoka" , sans-serif;
+    --font-family-sub: "Poppins" , sans-serif;
 }
-    
+body{
+    font-family: var(--font-family-sub);
+    line-height: 1.5;
+}
+.container{
+    display: grid;
+    grid-template-columns: 
+    [container-start] 1fr
+    [center-start] 
+    repeat(10,[col-start] minmax(min-content,11rem) [col-end])
+    [center-end] 
+    1fr [container-end];
+    grid-template-rows: repeat(6,min-content);
+    background-color: var(--color-primary);
+}
+a{
+    text-decoration: none;
+    color: var(--color-quaternary);
+}
+li{
+    list-style: none;
+}
+#main-header{
+    height: 250px;
+    background-color: var(--color-primary);
+    grid-column: center-start/center-end;
+}
+.hero{
+    height: 400px;
+    background-color: var(--color-tertiary);
+    grid-column: center-start/center-end;
+}
+.features{
+    height: 400px;
+    background-color: var(--color-quaternary);
+    grid-column: center-start/center-end;
+}
+.diversify{
+    height: 400px;
+    background-color: var(--color-tertiary-m-light);
+    grid-column: center-start/center-end;
+}
+.testimonials{
+    height: 400px;
+    background-color: var(--color-quaternary-m-light);
+    grid-column: center-start/center-end;
+}
+#footer{
+    height: 400px;
+    background-color: var(--color-secondary);
+    grid-column: center-start/center-end;
+}
+
+
+
