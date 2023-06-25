@@ -61,36 +61,160 @@ a{
 li{
     list-style: none;
 }
+/* _______________________________________________ Header */
 #main-header{
-    height: 250px;
     background-color: var(--color-primary);
     grid-column: center-start/center-end;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: var(--padding-s);
 }
+.main-header__logo h2{
+    font-size: 3rem;
+    color:var(--color-quaternary);
+    font-family: var(--font-family-main);
+}
+.main-header__logo span{
+    color: var(--color-secondary);
+}
+.main-header__nav{
+    width: 80%;
+    z-index: 1;
+    display: flex;
+    justify-content:space-between;
+}
+.main-header__nav--links{
+    display: flex;
+    gap: calc(.5rem + 1vw);
+    align-items: center;
+}
+.main-header__nav--links a{
+    font-size: 1.5rem;
+    padding: 1.5rem 2.5rem;
+    border-radius:.5rem;
+    transition: all .25s ease-in-out;
+}
+.main-header__nav--links a:hover{
+    background-color: var(--color-secondary);
+}
+.main-header__nav--registration{
+    display: flex;
+    gap: 1rem;
+}
+.main-header__nav--registration a{
+    font-size: 1.5rem;
+    padding:1.5rem 2.5rem;
+}
+.main-header__nav--registration a:last-child{
+    background-color: var(--color-secondary);
+    border-radius: .5rem;
+}
+/* _______________________________________________ Hero */
 .hero{
     height: 400px;
     background-color: var(--color-tertiary);
     grid-column: center-start/center-end;
 }
+/* _______________________________________________ Features */
 .features{
     height: 400px;
     background-color: var(--color-quaternary);
     grid-column: center-start/center-end;
 }
+/* _______________________________________________ Diversify */
 .diversify{
     height: 400px;
     background-color: var(--color-tertiary-m-light);
     grid-column: center-start/center-end;
 }
+/* _______________________________________________ Testimonials */
 .testimonials{
     height: 400px;
     background-color: var(--color-quaternary-m-light);
     grid-column: center-start/center-end;
 }
+/* _______________________________________________ Footer */
 #footer{
     height: 400px;
     background-color: var(--color-secondary);
     grid-column: center-start/center-end;
 }
+/* _____________________________ Media Queries ______________________________________ */
+@media screen and (max-width:800px) {
+    /* _______________-_-_Toggling Nav Bar_-_-_____________*/
+    .hamburger{
+        width: 5rem;
+        height: 5rem;
+        position: fixed;
+        top: 3rem;
+        right: 6rem;
+        z-index: 1;
+        padding: .6rem;
+        cursor: pointer;
+    }
+    .hamburger-line{
+        width: 3rem;
+        height: .3rem;
+        background-color: var(--color-quaternary);
+        position: absolute;
+    }
+    .hamburger-line:first-child{
+        width: 6rem;
+        top: 0;
+        left: 0;
+        transition: all .35s ease-in-out;
+    }
+    .hamburger-line:nth-child(2){
+        width: 2.5rem;
+        top: 1rem;
+        left: 0;
+        transition: all .35s ease-in-out;
+    }
+    .hamburger-line:nth-child(3){
+        width: 4rem;
+        top: 2rem;
+        left: 0;
+        transition: all .35s ease-in-out;
+    }
+    .line-1{
+        transform: rotate(45deg) translate(.3rem, 1.5rem);
+        width:3.5rem !important;
+    }
+    .line-2{
+        visibility: hidden;
+    }
+    .line-3{
+        transform: rotate(-45deg) translate(0, -1.15rem);
+        width:3.5rem !important;
+
+    }
+    .block.visible{
+        transform: translateX(0);
+    }
+    /* _______________-_-_Nav Links_-_-____________________ */
+    .main-header__nav,
+    .main-header__nav--links,
+    .main-header__nav--registration{
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        gap: 3rem;
+    }
+    .main-header__nav{
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 300px;
+        background-color: var(--color-primary);
+        height: 100vh;
+        padding: 4rem;
+        transform: translateX(100rem);
+        transition: all .55s cubic-bezier(1,0,0,1);
+    }
+}
+
 
 
 
