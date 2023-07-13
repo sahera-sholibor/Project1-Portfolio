@@ -185,6 +185,7 @@ li{
 .hero__vec img{
     width: 100%;
     height: 100%;
+    border-radius:20px;
 }
 /* _______________________________________________ Features */
 .features{
@@ -306,15 +307,106 @@ li{
 }
 /* _______________________________________________ Testimonials */
 .testimonials{
-    height: 400px;
     background-color: var(--color-tertiary);
     grid-column: center-start/center-end;
+    padding: var(--padding-m);
+
+}
+.testimoials__content{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(24rem ,1fr));
+    gap: 6rem;
+}
+.testimonials__content--person-one,
+.testimonials__content--person-two,
+.testimonials__content--person-three,
+.testimonials__content--person-four,
+.testimonials__content--person-five,
+.testimonials__content--person-six{
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: repeat(3,min-content);
+    gap: 3rem;
+}
+.testimonials__content--person-one img,
+.testimonials__content--person-two img,
+.testimonials__content--person-three img,
+.testimonials__content--person-four img,
+.testimonials__content--person-five img,
+.testimonials__content--person-six img{
+    border-radius: 50%;
+    grid-column: 1 /4;
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+}
+.testimonials__content--title{
+    grid-column: 5/-1;
+    place-self: center;
+    color: #fff;
+    display: grid;
+    gap: 1rem;
+    font-size: 1.3rem;
+
+}
+.testimonials__content--person-one p,
+.testimonials__content--person-two p,
+.testimonials__content--person-three p,
+.testimonials__content--person-four p,
+.testimonials__content--person-five p,
+.testimonials__content--person-six p{
+    grid-column: 1 /-1;
+    color: var(--color-quaternary);
+    font-size: 1.3rem;
+
+}
+.testimonials__content--person-one a,
+.testimonials__content--person-two a,
+.testimonials__content--person-three a,
+.testimonials__content--person-four a,
+.testimonials__content--person-five a,
+.testimonials__content--person-six a{
+    grid-column: 1 /-1;
+    background-color: var(--color-secondary);
+    padding:1.1rem 2.1rem;
+    font-size: 1.4rem;
+    text-align: center;
+
 }
 /* _______________________________________________ Footer */
 #footer{
-    height: 400px;
-    background-color: var(--color-secondary);
     grid-column: center-start/center-end;
+}
+.footer__container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(24rem,1fr));
+    gap: 4rem;
+}
+.sitemap,
+.resources,
+.company,
+.portfolio{
+    align-items:flex-start;
+    justify-content:flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: var(--padding-m);
+}
+.sitemap p,
+.resources p,
+.company p,
+.portfolio p{
+    font-size: var(--font-size-xs);
+    color: #fff;
+    font-weight: 700;
+}
+.sitemap a,
+.resources a,
+.company a,
+.portfolio a{
+    font-size:1.5rem;
 }
 /* _____________________________ Media Queries ______________________________________ */
 
@@ -325,6 +417,23 @@ li{
         padding:2rem;
         clip-path: polygon(0 0 , 100% 0,100% 93%,50% 100%,0 93%);
     }
+    .footer__container{
+       display:grid;
+       grid-template-columns: repeat(2,1fr);
+
+    }
+    .sitemap p,
+    .company p,
+    .resources p,
+    .portfolio p{
+    font-size: var(--font-size-m);
+}
+   .sitemap a,
+   .resources a,
+   .company a,
+   .portfolio a{
+   font-size:var(--font-size-s);
+}  
 }
 /* _____________________________ Media Queries 800px ______________________________________ */
 
@@ -470,6 +579,132 @@ li{
     font-size: 1.5rem;
 
 }
+}
+
+/* **************************************** SIGN UP PAGE ************************ */
+#sign-up-container{
+    background-color: var(--color-tertiary);
+    height: 100vh;
+    padding-left: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+}
+.sign-up{
+    padding-top: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.sign-up__form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+}
+.sign-up__form--title{
+    color: var(--color-quaternary-m-light);
+    font-size: 2rem;
+    font-weight: 100;
+}
+.fieldset{
+    display: flex;
+    flex-direction: column;
+    border: none;
+    gap: 2rem;
+}
+.fieldset:nth-of-type(3) {
+    flex-direction: row;
+}
+.fieldset label{
+    font-size: 2rem;
+    font-family: var(--font-family-main);
+    color: var(--color-quaternary);
+}
+.fieldset input{
+    padding:1rem 2rem;
+    font-size: 1.5rem;
+    outline: none;
+    border: none;
+    border-left: 2px solid var(--color-secondary);
+    background-color: transparent;
+    color: var(--color-quaternary);
+}
+.fieldset input[type="checkbox"]{
+    width: 2rem;
+    height: 2rem;
+}
+.fieldset input[type="checkbox"] + p ,
+.sign-up__form--sign-in-para{
+    font-size: 1.5rem;
+    color: var(--color-quaternary);
+}
+.sign-up__form--sign-in-para{
+    align-self: center;
+}
+.fieldset input[type="checkbox"] + p a,
+.sign-up__form--sign-in-para a{
+    color: var(--color-secondary);
+    font-size: 1.5rem;
+}
+input[type="submit"]{
+    border: none;
+    outline: none;
+    background-color: var(--color-secondary);
+    color: var(--color-quaternary);
+    font-size: 1.5rem;
+    padding:1rem 2rem;
+}
+.extra-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    background-color: var(--color-primary);
+    height: 100vh;
+    flex-basis: 40%;
+}
+.extra-info__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0 4rem;
+}
+.extra-info__content--title{
+    font-size: var(--font-size-s);
+    font-family: var(--font-family-main);
+    color: var(--color-quaternary);
+}
+.extra-info__content--para{
+    font-family: var(--font-family-sub);
+    color: var(--color-quaternary);
+    font-size: 1.5rem;
+}
+.extra-info__img{
+    width:100%;
+    height: 50%;
+}
+.extra-info__img img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* _____________________________ Media Queries 800px Sign Up Page ______________________________________ */
+@media screen and (max-width:800px){
+    body{
+        background-color: var(--color-tertiary);
+    }
+    .extra-info{
+        display: none;
+    }
+    #sign-up-container{
+        padding:3rem;
+        height: auto;
+    }
 }
 
 
